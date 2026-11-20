@@ -113,6 +113,12 @@ Effect: AGENTS.md was updated and pushed in commit d7371ae before notebook imple
 
 Effect: the plan was tightened before implementation. The notebook below follows these constraints. No model or Supabase test was run during notebook creation.
 
+### 4. Approval to publish the repository
+
+“כן, להפוך לציבורי”
+
+Effect: after I explained that publishing would expose the committed files, the user explicitly approved making homework-4 public. I checked the committed project files for obvious API-key and credentialed-Postgres-URI patterns; neither pattern was found. The repository visibility was then changed from private to public.
+
 ## Changes actually made
 
 - Created club_chatbot_supabase_gradio.ipynb as an 18-cell Google Colab notebook. It includes package setup, Colab Secrets instructions, a one-node graph, PostgresSaver setup, a graph diagram cell, the independent four-question test, database-backed conversation listing, restore/new-conversation callbacks, and the Gradio UI.
@@ -120,6 +126,7 @@ Effect: the plan was tightened before implementation. The notebook below follows
 - Saved conversation options are read via checkpointer.list(None); labels include the topic, first user question, and a short ID. Opening a conversation calls graph.get_state to restore messages and topic.
 - The system message is rebuilt inside the chatbot node for each invocation and is not included in the message state. The graph contains one chatbot node, whose body calls the model once.
 - The reflection section is an unfilled template. No test outputs or reflection results have been invented.
+- After explicit user approval, changed the GitHub repository visibility to public to satisfy the assignment; the local untracked assignment PDF was not uploaded.
 
 ## Version notes
 
@@ -139,5 +146,5 @@ Manual Google Colab work remains:
 4. Run Gradio; check new conversations, topic switching in the same thread, database-backed labels, and reopening a conversation.
 5. Restart the Colab runtime, rerun setup, reopen a saved conversation, and verify its messages and topic.
 6. Write the 4–6 sentence reflection based on those observations.
-7. Ensure the final GitHub repository is public and the Colab notebook link is accessible to the lecturer. Do not publish the temporary Gradio link or secrets.
+7. Create and verify a Google Colab link the lecturer can open. The GitHub repository is already public. Do not publish the temporary Gradio link or secrets.
 
